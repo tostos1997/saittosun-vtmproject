@@ -1,0 +1,137 @@
+@import "./base/reset";
+@import "./base/fonts";
+@import "./base/variables";
+@import "./base/mixins";
+
+@import "../node_modules/basiclightbox/src/styles/main.scss";
+
+body {
+  background-color: #eef3f6;
+  margin-top: 28px;
+  font-family: "Roboto", sans-serif;
+}
+header {
+  background-color: blue;
+  padding: 15px 20px;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  h1 {
+    color: white;
+    font-size: 26px;
+  }
+}
+#list {
+  display: flex;
+  width: 600px;
+  height: 850px;
+  margin: 0 auto;
+  font-family: "helvetica neue", sans-serif;
+  background: #193549;
+  border: 1px solid blue;
+  position: relative;
+  .listItem {
+    padding: 20px;
+    &__listItems {
+      background-color: #fff;
+      margin-bottom: 13px;
+      border-radius: 6px;
+      display: flex;
+      span {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+      }
+      img {
+        height: 140px;
+        border: 2px solid white;
+        border-radius: 5px;
+      }
+      &__title {
+        color: black;
+        font-size: 22px;
+        padding: 10px;
+      }
+      &__date {
+        margin-left: 230px;
+        padding: 10px;
+        font-size: 14px;
+      }
+      &__video {
+        color: white;
+        display: none;
+      }
+    }
+  }
+}
+.pagination {
+  color: white;
+  font-size: 22px;
+  position: absolute;
+  top: 95%;
+  left: 15%;
+  display: flex;
+  &__prev {
+    font-size: 17px;
+    color: white;
+  }
+  &__next {
+    font-size: 17px;
+    color: white;
+  }
+  &__pageNumbers {
+    margin: 0 120px;
+    font-family: Helvetica, sans-serif;
+    font-size: 17px;
+  }
+}
+.loader {
+  position: absolute;
+  background-image: url("../assets/giphy1.gif");
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 550px) {
+  body {
+    margin-top: 0px;
+  }
+  header {
+    width: 320px;
+    padding: 5px 8px !important;
+    h1 {
+      font-size: 22px;
+    }
+  }
+  #list {
+    width: 320px;
+    height: 539px;
+  }
+  .listItem {
+    padding: 10px !important;
+  }
+  .listItem__listItems {
+    img {
+      width: 120px !important;
+      height: 90px !important;
+    }
+  }
+  .listItem__listItems__title {
+    font-size: 14px !important;
+    padding: 5px 0 !important;
+  }
+  .listItem__listItems__date {
+    margin-left: 65px !important;
+    font-size: 8px;
+    padding: 0px !important;
+  }
+  .pagination {
+    left: 4%;
+    top: 96%;
+  }
+  .pagination__pageNumbers {
+    margin: 0 90px;
+  }
+}
